@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1312</width>
+    <width>1311</width>
     <height>889</height>
    </rect>
   </property>
@@ -45,7 +45,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-843</y>
+       <y>0</y>
        <width>1289</width>
        <height>2076</height>
       </rect>
@@ -142,7 +142,7 @@
           <string>Gaussian</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="HistogramButton">
+        <widget class="QPushButton" name="EqualizationButton">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -152,7 +152,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Histogram</string>
+          <string>Equalization</string>
          </property>
         </widget>
         <widget class="QPushButton" name="GreyscaleButton">
@@ -537,7 +537,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1312</width>
+     <width>1311</width>
      <height>26</height>
     </rect>
    </property>
