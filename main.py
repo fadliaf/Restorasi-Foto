@@ -124,7 +124,7 @@ class ShowImage(QMainWindow):
         cdf_m = (cdf_m - cdf_m.min()) * 255 / (cdf_m.max() - cdf_m.min()) 
         cdf = np.ma.filled(cdf_m, 0).astype('uint8') 
         self.filtered_image = cdf[self.filtered_image] 
-        plt.plot(self.cdf_normalized, color='b')
+        plt.plot(cdf_normalized, color='b')
         plt.hist(self.filtered_image.flatten(), 256, [0, 256], color='r')
         plt.xlim([0, 256])
         plt.legend(('cdf', 'histogram'), loc='upper left')
