@@ -18,7 +18,7 @@ class ShowImage(QMainWindow):
 
         self.GaussianButton.clicked.connect(self.GaussianFilter)
         self.EqualizationButton.clicked.connect(self.HistogramEqualization)
-        self.pushButton_5.clicked.connect(self.ShowHistogramEqualization)
+        self.HistogramButton.clicked.connect(self.ShowHistogram)
 
         self.GrayscaleButton.clicked.connect(self.Grayscale)
         self.BinerButton.clicked.connect(self.Biner)
@@ -58,6 +58,8 @@ class ShowImage(QMainWindow):
                 new_size = (int(width * scale), int(height * scale))
                 self.original_image = cv2.resize(self.original_image, new_size, interpolation=cv2.INTER_AREA)
             self.filtered_image = self.original_image.copy()
+            self.Image = self.original_image.copy()
+            self.displayImage(1)
             self.AdjustImage()
 
     def SaveImage(self):
@@ -115,22 +117,26 @@ class ShowImage(QMainWindow):
         self.AdjustImage()
 
     def HistogramEqualization(self):
-        gray = cv2.cvtColor(self.filtered_image, cv2.COLOR_BGR2GRAY)
-        equalized = cv2.equalizeHist(gray)
-        self.filtered_image = cv2.cvtColor(equalized, cv2.COLOR_GRAY2BGR)
-        self.AdjustImage()
-
-    def ShowHistogramEqualization(self):
-        self.HistogramEqualization()
-        hist, bins = np.histogram(cv2.cvtColor(self.filtered_image, cv2.COLOR_BGR2GRAY).flatten(), 256, [0, 256])
-        cdf = hist.cumsum()
-        cdf_normalized = cdf * hist.max() / cdf.max()
-        plt.plot(cdf_normalized, color='b')
+        hist, bins = np.histogram(self.filtered_image.flatten(), 256, [0, 256]) 
+        cdf = hist.cumsum() 
+        cdf_normalized = cdf * hist.max() / cdf.max() 
+        cdf_m = np.ma.masked_equal(cdf, 0) 
+        cdf_m = (cdf_m - cdf_m.min()) * 255 / (cdf_m.max() - cdf_m.min()) 
+        cdf = np.ma.filled(cdf_m, 0).astype('uint8') 
+        self.filtered_image = cdf[self.filtered_image] 
+        plt.plot(self.cdf_normalized, color='b')
         plt.hist(self.filtered_image.flatten(), 256, [0, 256], color='r')
         plt.xlim([0, 256])
         plt.legend(('cdf', 'histogram'), loc='upper left')
         plt.show()
+        self.AdjustImage()
 
+    def ShowHistogram(self):
+        hist, bins = np.histogram(self.filtered_image.flatten(), 256, [0, 256])
+        plt.hist(self.filtered_image.flatten(), 256, [0, 256], color='r')
+        plt.xlim([0, 256])
+        plt.show()
+    
     def AdjustImage(self):
         if self.filtered_image is None:
             return
