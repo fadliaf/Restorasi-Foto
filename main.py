@@ -14,12 +14,14 @@ class ShowImage(QMainWindow):
         self.Image = None
         self.original_image = None  # Simpan gambar asli agar tidak terpengaruh saat mengedit
         
-        # Fungsi button filter
+        # Fungsi button 
         self.GrayscaleButton.clicked.connect(self.Grayscale)
         self.BinerButton.clicked.connect(self.Biner)
         self.ResetButton.clicked.connect(self.ResetImage)
+        self.LoadButton.clicked.connect(self.LoadImage)
+        self.SaveButton.clicked.connect(self.SaveImage)
 
-         # Fungsi event pada slider
+        # Fungsi slider
         self.BrightnessSlider.valueChanged.connect(self.AdjustImage)
         self.ContrastSlider.valueChanged.connect(self.AdjustImage)
         self.SharpeningSlider.valueChanged.connect(self.AdjustImage)
@@ -45,12 +47,6 @@ class ShowImage(QMainWindow):
         
         self.ValueSlider.setRange(0, 200)
         self.ValueSlider.setValue(100)
-
-       
-
-        # Fungsi tombol
-        self.LoadButton.clicked.connect(self.LoadImage)
-        self.SaveButton.clicked.connect(self.SaveImage)
 
     def LoadImage(self):
         options = QFileDialog.Options()
@@ -94,7 +90,7 @@ class ShowImage(QMainWindow):
         if self.Image is None:
             return
 
-        img = cv2.cvtColor(self.Image, cv2.COLOR_BGR2RGB)  # Konversi ke RGB untuk PyQt
+        img = cv2.cvtColor(self.Image, cv2.COLOR_BGR2RGB)
         qformat = QImage.Format_RGB888
         qimg = QImage(img.data, img.shape[1], img.shape[0], img.strides[0], qformat)
 
