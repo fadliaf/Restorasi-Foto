@@ -155,17 +155,25 @@
           <string>Equalization</string>
          </property>
         </widget>
+<<<<<<< HEAD
         <widget class="QPushButton" name="GreyscaleButton">
+=======
+        <widget class="QPushButton" name="BinerButton">
+>>>>>>> 6057113 (adjust)
          <property name="geometry">
           <rect>
-           <x>280</x>
-           <y>540</y>
+           <x>910</x>
+           <y>510</y>
            <width>101</width>
            <height>41</height>
           </rect>
          </property>
          <property name="text">
+<<<<<<< HEAD
           <string>Greyscale</string>
+=======
+          <string>Biner</string>
+>>>>>>> 6057113 (adjust)
          </property>
         </widget>
         <widget class="QPushButton" name="BinerButton">
@@ -194,17 +202,17 @@
           <string>PushButton</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="GrayscaleButton">
          <property name="geometry">
           <rect>
-           <x>280</x>
-           <y>610</y>
+           <x>770</x>
+           <y>510</y>
            <width>101</width>
            <height>41</height>
           </rect>
          </property>
          <property name="text">
-          <string>PushButton</string>
+          <string>Grayscale</string>
          </property>
         </widget>
        </widget>
@@ -464,6 +472,45 @@
           <string>Save</string>
          </property>
         </widget>
+        <widget class="QPushButton" name="SaveButton">
+         <property name="geometry">
+          <rect>
+           <x>860</x>
+           <y>530</y>
+           <width>251</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Save Image</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="SaveButtonEx">
+         <property name="geometry">
+          <rect>
+           <x>860</x>
+           <y>600</y>
+           <width>251</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Save .exl</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ResetButton">
+         <property name="geometry">
+          <rect>
+           <x>1070</x>
+           <y>410</y>
+           <width>141</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Reset Image</string>
+         </property>
+        </widget>
        </widget>
       </item>
      </layout>
@@ -537,8 +584,13 @@
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD
      <width>1311</width>
      <height>26</height>
+=======
+     <width>1312</width>
+     <height>21</height>
+>>>>>>> 6057113 (adjust)
     </rect>
    </property>
   </widget>
