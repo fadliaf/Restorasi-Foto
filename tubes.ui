@@ -45,7 +45,7 @@
       <x>1</x>
       <y>70</y>
       <width>1311</width>
-      <height>701</height>
+      <height>711</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -58,7 +58,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-1039</y>
+       <y>-892</y>
        <width>1288</width>
        <height>2076</height>
       </rect>
@@ -93,7 +93,7 @@
          <property name="geometry">
           <rect>
            <x>80</x>
-           <y>200</y>
+           <y>150</y>
            <width>1101</width>
            <height>171</height>
           </rect>
@@ -104,7 +104,32 @@
           </font>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aplikasi ini membantu anda memperbaiki kualitas foto lama&lt;/p&gt;&lt;p&gt;Cukup unggah foto lama anda dan nikmati hasil yang lebih tajam dan jelas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aplikasi ini membantu anda memperbaiki kualitas foto lama &lt;/p&gt;&lt;p&gt;Cukup unggah foto lama anda dan nikmati hasil yang lebih tajam dan jelas&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>428</x>
+           <y>390</y>
+           <width>411</width>
+           <height>181</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Kelas EE
+15-2023-047 - Fadli Ahmad F
+15-2023-067 - Luqmanul Hakim
+15-2023-174 - M. Iqbal Pasha A.F
+15-2023-179 - Siti Raudatul J.F</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -624,9 +649,9 @@
     <property name="geometry">
      <rect>
       <x>1</x>
-      <y>770</y>
+      <y>780</y>
       <width>1311</width>
-      <height>71</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -638,6 +663,27 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>13</y>
+       <width>401</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(167, 167, 167, 0);</string>
+     </property>
+     <property name="text">
+      <string>© 2025 nama kelompok | All rights reserved</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame_14">
     <property name="geometry">
