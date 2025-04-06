@@ -7,7 +7,6 @@
     <x>0</x>
     <y>0</y>
     <width>1313</width>
-    <width>1312</width>
     <height>889</height>
    </rect>
   </property>
@@ -19,7 +18,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true"/>
    </property>
    <widget class="QLabel" name="label_22">
     <property name="geometry">
@@ -34,7 +33,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="background.qrc">:/newPrefix/Users/fadli ahmad fahrezi/Pictures/bg3.jpeg</pixmap>
+     <pixmap>bg3.jpeg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -51,19 +50,6 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(167, 167, 167, 0); </string>
-     <string notr="true">QScrollBar:vertical {
-    border: none;
-    background: rgb(183, 177, 242);
-    width: 20px;
-    margin: 0px 0px 0px 0px;
-}
-
-QScrollArea{
-    border: none;
-    background: #ffffff;
-    width: 20px;
-    margin: 0px 0px 0px 0px;
-}</string>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -72,8 +58,8 @@ QScrollArea{
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-793</y>
-       <width>1290</width>
+       <y>-28</y>
+       <width>1288</width>
        <height>2076</height>
       </rect>
      </property>
@@ -143,7 +129,7 @@ QScrollArea{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="InputImage_4">
+        <widget class="QLabel" name="InputImage">
          <property name="geometry">
           <rect>
            <x>260</x>
@@ -162,7 +148,7 @@ QScrollArea{
           <string/>
          </property>
         </widget>
-        <widget class="QPushButton" name="LoadButton_4">
+        <widget class="QPushButton" name="LoadButton">
          <property name="geometry">
           <rect>
            <x>563</x>
@@ -180,7 +166,7 @@ QScrollArea{
           <string>Load Image</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="GaussianButton_4">
+        <widget class="QPushButton" name="GaussianButton">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -201,7 +187,7 @@ QScrollArea{
           <string>Gaussian</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="EqualizationButton_4">
+        <widget class="QPushButton" name="EqualizationButton">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -222,12 +208,11 @@ QScrollArea{
           <string>Equalization</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="GreyscaleButton_4">
-        <widget class="QPushButton" name="BinerButton">
+        <widget class="QPushButton" name="GrayscaleButton">
          <property name="geometry">
           <rect>
-           <x>910</x>
-           <y>510</y>
+           <x>280</x>
+           <y>540</y>
            <width>101</width>
            <height>41</height>
           </rect>
@@ -241,11 +226,10 @@ QScrollArea{
           <string notr="true">background-color: rgb(183, 177, 242);</string>
          </property>
          <property name="text">
-          <string>Biner</string>
+          <string>Greyscale</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="BinerButton_4">
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="BinerButton">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -263,10 +247,10 @@ QScrollArea{
           <string notr="true">background-color: rgb(183, 177, 242);</string>
          </property>
          <property name="text">
-          <string>PushButton</string>
+          <string>Biner</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_11">
+        <widget class="QPushButton" name="pushButton_5">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -288,11 +272,10 @@ QScrollArea{
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_12">
-        <widget class="QPushButton" name="GrayscaleButton">
          <property name="geometry">
           <rect>
-           <x>770</x>
-           <y>510</y>
+           <x>280</x>
+           <y>610</y>
            <width>101</width>
            <height>41</height>
           </rect>
@@ -306,7 +289,7 @@ QScrollArea{
           <string notr="true">background-color: rgb(183, 177, 242);</string>
          </property>
          <property name="text">
-          <string>Grayscale</string>
+          <string>PushButton</string>
          </property>
         </widget>
        </widget>
@@ -328,7 +311,7 @@ QScrollArea{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="OutputImage_4">
+        <widget class="QLabel" name="OutputImage">
          <property name="geometry">
           <rect>
            <x>270</x>
@@ -347,7 +330,7 @@ QScrollArea{
           <string/>
          </property>
         </widget>
-        <widget class="QSlider" name="BrightnessSlider_4">
+        <widget class="QSlider" name="BrightnessSlider">
          <property name="geometry">
           <rect>
            <x>60</x>
@@ -360,7 +343,7 @@ QScrollArea{
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QSlider" name="ContrastSlider_4">
+        <widget class="QSlider" name="ContrastSlider">
          <property name="geometry">
           <rect>
            <x>59</x>
@@ -373,7 +356,7 @@ QScrollArea{
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QSlider" name="SharpeningSlider_4">
+        <widget class="QSlider" name="SharpeningSlider">
          <property name="geometry">
           <rect>
            <x>300</x>
@@ -386,7 +369,7 @@ QScrollArea{
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QSlider" name="SaturationSlider_4">
+        <widget class="QSlider" name="SaturationSlider">
          <property name="geometry">
           <rect>
            <x>300</x>
@@ -402,9 +385,9 @@ QScrollArea{
         <widget class="QLabel" name="label_23">
          <property name="geometry">
           <rect>
-           <x>59</x>
-           <y>529</y>
-           <width>101</width>
+           <x>40</x>
+           <y>530</y>
+           <width>131</width>
            <height>31</height>
           </rect>
          </property>
@@ -416,13 +399,16 @@ QScrollArea{
          <property name="text">
           <string>Brightness</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
         <widget class="QLabel" name="label_24">
          <property name="geometry">
           <rect>
-           <x>58</x>
-           <y>599</y>
-           <width>81</width>
+           <x>40</x>
+           <y>600</y>
+           <width>111</width>
            <height>31</height>
           </rect>
          </property>
@@ -434,13 +420,16 @@ QScrollArea{
          <property name="text">
           <string>Contrast</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
         <widget class="QLabel" name="label_25">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>528</y>
-           <width>101</width>
+           <x>270</x>
+           <y>530</y>
+           <width>161</width>
            <height>31</height>
           </rect>
          </property>
@@ -452,13 +441,16 @@ QScrollArea{
          <property name="text">
           <string>Sharpening</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
         <widget class="QLabel" name="label_26">
          <property name="geometry">
           <rect>
-           <x>300</x>
+           <x>280</x>
            <y>600</y>
-           <width>91</width>
+           <width>131</width>
            <height>31</height>
           </rect>
          </property>
@@ -470,8 +462,11 @@ QScrollArea{
          <property name="text">
           <string>Saturation</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
-        <widget class="QSlider" name="HueSlider_4">
+        <widget class="QSlider" name="HueSlider">
          <property name="geometry">
           <rect>
            <x>550</x>
@@ -484,7 +479,7 @@ QScrollArea{
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
-        <widget class="QSlider" name="ValueSlider_4">
+        <widget class="QSlider" name="ValueSlider">
          <property name="geometry">
           <rect>
            <x>550</x>
@@ -503,9 +498,6 @@ QScrollArea{
            <x>516</x>
            <y>538</y>
            <width>101</width>
-           <x>549</x>
-           <y>536</y>
-           <width>68</width>
            <height>21</height>
           </rect>
          </property>
@@ -517,6 +509,9 @@ QScrollArea{
          <property name="text">
           <string>Hue</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
         </widget>
         <widget class="QLabel" name="label_28">
          <property name="geometry">
@@ -524,9 +519,6 @@ QScrollArea{
            <x>517</x>
            <y>608</y>
            <width>111</width>
-           <x>549</x>
-           <y>606</y>
-           <width>68</width>
            <height>21</height>
           </rect>
          </property>
@@ -538,47 +530,42 @@ QScrollArea{
          <property name="text">
           <string>Value</string>
          </property>
-        </widget>
-        <widget class="QPushButton" name="SaveButton_4">
-         <property name="geometry">
-          <rect>
-           <x>860</x>
-           <y>530</y>
-           <width>251</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Save Image</string>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QPushButton" name="SaveButtonEx">
+        <widget class="QPushButton" name="SaveButton">
          <property name="geometry">
           <rect>
-           <x>860</x>
+           <x>1100</x>
            <y>600</y>
-           <width>251</width>
+           <width>111</width>
            <height>41</height>
           </rect>
          </property>
-         <property name="text">
-          <string>Save .exl</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="ResetButton">
-         <property name="geometry">
-          <rect>
-           <x>1070</x>
-           <y>410</y>
-           <width>141</width>
-           <height>41</height>
-          </rect>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(183, 177, 242);</string>
          </property>
          <property name="text">
-          <string>Reset Image</string>
+          <string>Save</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ResetButton">
+         <property name="geometry">
+          <rect>
+           <x>1060</x>
+           <y>490</y>
+           <width>101</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>PushButton</string>
          </property>
         </widget>
        </widget>
@@ -626,9 +613,9 @@ QScrollArea{
     <widget class="QLabel" name="label_29">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>280</x>
        <y>10</y>
-       <width>601</width>
+       <width>751</width>
        <height>51</height>
       </rect>
      </property>
@@ -658,7 +645,6 @@ QScrollArea{
      <x>0</x>
      <y>0</y>
      <width>1313</width>
-     <width>1312</width>
      <height>26</height>
     </rect>
    </property>
