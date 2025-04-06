@@ -51,9 +51,9 @@ QScrollArea{
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-1369</y>
-       <width>1294</width>
-       <height>2070</height>
+       <y>-793</y>
+       <width>1290</width>
+       <height>2076</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -148,7 +148,7 @@ QScrollArea{
           <string>Gaussian</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="HistogramButton">
+        <widget class="QPushButton" name="EqualizationButton">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -158,7 +158,7 @@ QScrollArea{
           </rect>
          </property>
          <property name="text">
-          <string>Histogram</string>
+          <string>Equalization</string>
          </property>
         </widget>
         <widget class="QPushButton" name="BinerButton">
@@ -547,7 +547,7 @@ QScrollArea{
      <x>0</x>
      <y>0</y>
      <width>1312</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

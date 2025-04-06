@@ -17,7 +17,7 @@ class ShowImage(QMainWindow):
         
         # Fungsi button filter
         self.GaussianButton.clicked.connect(self.GaussianFilter)
-        self.EqualizationButton.clicked.connect(self.HistogramEqualization)
+        self.HistogramEqualizationButton.clicked.connect(self.HistogramEqualization)
         self.pushButton_5.clicked.connect(self.ShowHistogramEqualization)
         # Fungsi button 
         self.GrayscaleButton.clicked.connect(self.Grayscale)
