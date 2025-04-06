@@ -155,11 +155,7 @@
           <string>Equalization</string>
          </property>
         </widget>
-<<<<<<< HEAD
-        <widget class="QPushButton" name="GreyscaleButton">
-=======
         <widget class="QPushButton" name="BinerButton">
->>>>>>> 6057113 (adjust)
          <property name="geometry">
           <rect>
            <x>910</x>
@@ -169,11 +165,7 @@
           </rect>
          </property>
          <property name="text">
-<<<<<<< HEAD
-          <string>Greyscale</string>
-=======
           <string>Biner</string>
->>>>>>> 6057113 (adjust)
          </property>
         </widget>
         <widget class="QPushButton" name="BinerButton">
@@ -584,13 +576,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-<<<<<<< HEAD
-     <width>1311</width>
-     <height>26</height>
-=======
      <width>1312</width>
      <height>21</height>
->>>>>>> 6057113 (adjust)
     </rect>
    </property>
   </widget>

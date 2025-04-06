@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import cv2
 import sys
 from PyQt5 import QtCore, QtWidgets
@@ -15,6 +16,9 @@ class ShowImage(QMainWindow):
         self.original_image = None  # Simpan gambar asli agar tidak terpengaruh saat mengedit
         
         # Fungsi button filter
+        self.GaussianButton.clicked.connect(self.GaussianFilter)
+        self.EqualizationButton.clicked.connect(self.HistogramEqualization)
+        self.pushButton_5.clicked.connect(self.ShowHistogramEqualization)
         self.GrayscaleButton.clicked.connect(self.Grayscale)
         self.BinerButton.clicked.connect(self.Biner)
         self.ResetButton.clicked.connect(self.ResetImage)
@@ -138,6 +142,86 @@ class ShowImage(QMainWindow):
                 
         self.displayImage(2)
 
+    def Convolve(self, kernel):
+        # Get image dimensions
+        img_height, img_width = self.Image.shape[:2]
+        
+        # Get kernel dimensions 
+        kernel_height, kernel_width = kernel.shape
+        
+        # Calculate half sizes
+        H = kernel_height // 2
+        W = kernel_width // 2
+        
+        # Create output Image
+        output = np.zeros_like(self.Image)
+        
+        # Perform convolution
+        for i in range(H+1, img_height-H):
+            for j in range(W+1, img_width-W):
+                # For each color channel
+                for c in range(3):
+                    sum = 0
+                    for k in range(-H, H+1):
+                        for l in range(-W, W+1):
+                            a = self.Image[i+k, j+l, c]
+                            w = kernel[H+k, W+l]
+                            sum += w * a
+                    output[i, j, c] = sum
+                    
+        return output
+
+    def GaussianFilter(self):
+        # Create Gaussian kernel using the formula:
+        # G(x,y) = (1/(2*pi*sigma^2)) * e^(-(x^2 + y^2)/(2*sigma^2))
+        kernel_size = 3
+        sigma = 1.0
+        
+        # Create coordinate matrices
+        ax = np.linspace(-(kernel_size - 1) / 2., (kernel_size - 1) / 2., kernel_size)
+        xx, yy = np.meshgrid(ax, ax)
+        
+        # Calculate Gaussian kernel values
+        kernel = (1/(2*np.pi*sigma**2)) * np.exp(-0.5 * (np.square(xx) + np.square(yy)) / np.square(sigma))
+        
+        # Normalize the kernel
+        kernel = kernel / np.sum(kernel)
+        
+        # Apply convolution using the existing convolve method
+        filtered_image = self.Convolve(kernel)
+        
+        # Store pixel values before convolution for analysis
+        original_pixels = self.Image.copy()
+        
+        # Update image with filtered result
+        self.Image = filtered_image
+        
+        # Display filtered image
+        self.displayImage(2)
+
+    def HistogramEqualization(self):
+        hist, bins = np.histogram(self.Image.flatten(), 256, [0, 256])
+        cdf = hist.cumsum()
+        cdf_normalized = cdf * hist.max() / cdf.max()
+        cdf_m = np.ma.masked_equal(cdf, 0)
+        cdf_m = (cdf_m - cdf_m.min()) * 255 / (cdf_m.max() - cdf_m.min())
+        cdf = np.ma.filled(cdf_m, 0).astype('uint8')
+        self.Image = cdf[self.Image]
+        self.displayImage(2)
+        
+        return cdf_normalized
+
+    def ShowHistogramEqualization(self):
+        # Get the normalized CDF by calling HistogramEqualization
+        cdf_normalized = self.HistogramEqualization()
+        
+        # Plot CDF and histogram
+        plt.plot(cdf_normalized, color='b')
+        plt.hist(self.Image.flatten(), 256, [0, 256], color='r')
+        plt.xlim([0, 256])
+        plt.legend(('cdf', 'histogram'), loc='upper left')
+        plt.show()
+
     def AdjustImage(self):
         if self.original_image is None:
             return
@@ -186,7 +270,6 @@ class ShowImage(QMainWindow):
         # Simpan dan tampilkan
         self.Image = adjusted_image
         self.displayImage(2)
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
