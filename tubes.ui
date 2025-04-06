@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1311</width>
+    <width>1312</width>
     <height>889</height>
    </rect>
   </property>
@@ -14,11 +14,11 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
@@ -36,7 +36,13 @@
     width: 20px;
     margin: 0px 0px 0px 0px;
 }
-</string>
+
+QScrollArea{
+    border: none;
+    background: #ffffff;
+    width: 20px;
+    margin: 0px 0px 0px 0px;
+}</string>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -45,9 +51,9 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>0</y>
-       <width>1289</width>
-       <height>2076</height>
+       <y>-1369</y>
+       <width>1294</width>
+       <height>2070</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -142,7 +148,7 @@
           <string>Gaussian</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="EqualizationButton">
+        <widget class="QPushButton" name="HistogramButton">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -152,14 +158,10 @@
           </rect>
          </property>
          <property name="text">
-          <string>Equalization</string>
+          <string>Histogram</string>
          </property>
         </widget>
-<<<<<<< HEAD
-        <widget class="QPushButton" name="GreyscaleButton">
-=======
         <widget class="QPushButton" name="BinerButton">
->>>>>>> 6057113 (adjust)
          <property name="geometry">
           <rect>
            <x>910</x>
@@ -169,14 +171,10 @@
           </rect>
          </property>
          <property name="text">
-<<<<<<< HEAD
-          <string>Greyscale</string>
-=======
           <string>Biner</string>
->>>>>>> 6057113 (adjust)
          </property>
         </widget>
-        <widget class="QPushButton" name="BinerButton">
+        <widget class="QPushButton" name="pushButton_4">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -186,7 +184,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Biner</string>
+          <string>PushButton</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_5">
@@ -305,9 +303,9 @@
         <widget class="QLabel" name="label_3">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>530</y>
-           <width>131</width>
+           <x>59</x>
+           <y>529</y>
+           <width>101</width>
            <height>31</height>
           </rect>
          </property>
@@ -319,16 +317,13 @@
          <property name="text">
           <string>Brightness</string>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
         </widget>
         <widget class="QLabel" name="label_4">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>600</y>
-           <width>111</width>
+           <x>58</x>
+           <y>599</y>
+           <width>81</width>
            <height>31</height>
           </rect>
          </property>
@@ -340,16 +335,13 @@
          <property name="text">
           <string>Contrast</string>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
         </widget>
         <widget class="QLabel" name="label_5">
          <property name="geometry">
           <rect>
-           <x>270</x>
-           <y>530</y>
-           <width>161</width>
+           <x>300</x>
+           <y>528</y>
+           <width>101</width>
            <height>31</height>
           </rect>
          </property>
@@ -361,16 +353,13 @@
          <property name="text">
           <string>Sharpening</string>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
         </widget>
         <widget class="QLabel" name="label_6">
          <property name="geometry">
           <rect>
-           <x>280</x>
+           <x>300</x>
            <y>600</y>
-           <width>131</width>
+           <width>91</width>
            <height>31</height>
           </rect>
          </property>
@@ -381,9 +370,6 @@
          </property>
          <property name="text">
           <string>Saturation</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
         <widget class="QSlider" name="HueSlider">
@@ -415,9 +401,9 @@
         <widget class="QLabel" name="label_2">
          <property name="geometry">
           <rect>
-           <x>520</x>
-           <y>530</y>
-           <width>101</width>
+           <x>549</x>
+           <y>536</y>
+           <width>68</width>
            <height>21</height>
           </rect>
          </property>
@@ -429,16 +415,13 @@
          <property name="text">
           <string>Hue</string>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
         </widget>
         <widget class="QLabel" name="label_7">
          <property name="geometry">
           <rect>
-           <x>520</x>
-           <y>600</y>
-           <width>111</width>
+           <x>549</x>
+           <y>606</y>
+           <width>68</width>
            <height>21</height>
           </rect>
          </property>
@@ -449,27 +432,6 @@
          </property>
          <property name="text">
           <string>Value</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="SaveButton">
-         <property name="geometry">
-          <rect>
-           <x>1100</x>
-           <y>600</y>
-           <width>111</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Save</string>
          </property>
         </widget>
         <widget class="QPushButton" name="SaveButton">
@@ -537,9 +499,9 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>370</x>
        <y>10</y>
-       <width>751</width>
+       <width>601</width>
        <height>51</height>
       </rect>
      </property>
@@ -584,13 +546,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-<<<<<<< HEAD
-     <width>1311</width>
-     <height>26</height>
-=======
      <width>1312</width>
      <height>21</height>
->>>>>>> 6057113 (adjust)
     </rect>
    </property>
   </widget>
