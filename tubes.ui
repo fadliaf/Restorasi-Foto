@@ -58,7 +58,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-892</y>
+       <y>-1367</y>
        <width>1288</width>
        <height>2076</height>
       </rect>
@@ -113,7 +113,7 @@
         <widget class="QLabel" name="label_2">
          <property name="geometry">
           <rect>
-           <x>428</x>
+           <x>444</x>
            <y>390</y>
            <width>411</width>
            <height>181</height>
@@ -157,8 +157,8 @@
         <widget class="QLabel" name="InputImage">
          <property name="geometry">
           <rect>
-           <x>260</x>
-           <y>30</y>
+           <x>270</x>
+           <y>50</y>
            <width>751</width>
            <height>461</height>
           </rect>
@@ -176,8 +176,8 @@
         <widget class="QPushButton" name="LoadButton">
          <property name="geometry">
           <rect>
-           <x>560</x>
-           <y>510</y>
+           <x>570</x>
+           <y>540</y>
            <width>151</width>
            <height>51</height>
           </rect>
@@ -198,37 +198,34 @@
            <normaloff>load.png</normaloff>load.png</iconset>
          </property>
         </widget>
-        <widget class="QPushButton" name="GaussianButton">
+        <widget class="QLabel" name="label_7">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>540</y>
-           <width>101</width>
-           <height>41</height>
+           <x>550</x>
+           <y>20</y>
+           <width>201</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <pointsize>11</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(183, 177, 242);</string>
-         </property>
          <property name="text">
-          <string>Gaussian</string>
+          <string>Input</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QPushButton" name="EqualizationButton">
+        <widget class="QPushButton" name="OriginalExcelButton">
          <property name="geometry">
           <rect>
-           <x>150</x>
-           <y>540</y>
-           <width>101</width>
-           <height>41</height>
+           <x>869</x>
+           <y>560</y>
+           <width>51</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="font">
@@ -243,16 +240,16 @@
           <string notr="true">background-color: rgb(183, 177, 242);</string>
          </property>
          <property name="text">
-          <string>Equalization</string>
+          <string>.xlsx</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="GrayscaleButton">
+        <widget class="QPushButton" name="OriginalTextButton">
          <property name="geometry">
           <rect>
-           <x>280</x>
-           <y>540</y>
-           <width>101</width>
-           <height>41</height>
+           <x>930</x>
+           <y>560</y>
+           <width>51</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="font">
@@ -267,79 +264,28 @@
           <string notr="true">background-color: rgb(183, 177, 242);</string>
          </property>
          <property name="text">
-          <string>Greyscale</string>
+          <string>.txt</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="BinerButton">
+        <widget class="QLabel" name="label_10">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>610</y>
-           <width>101</width>
-           <height>41</height>
+           <x>859</x>
+           <y>520</y>
+           <width>131</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <pointsize>11</pointsize>
+           <pointsize>12</pointsize>
           </font>
          </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(183, 177, 242);</string>
-         </property>
          <property name="text">
-          <string>Biner</string>
+          <string>Simpan Piksel</string>
          </property>
-        </widget>
-        <widget class="QPushButton" name="HistogramButton">
-         <property name="geometry">
-          <rect>
-           <x>150</x>
-           <y>610</y>
-           <width>101</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(183, 177, 242);</string>
-         </property>
-         <property name="text">
-          <string>Histogram</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_12">
-         <property name="geometry">
-          <rect>
-           <x>280</x>
-           <y>610</y>
-           <width>101</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(183, 177, 242);</string>
-         </property>
-         <property name="text">
-          <string>PushButton</string>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </widget>
@@ -383,8 +329,8 @@
         <widget class="QSlider" name="BrightnessSlider">
          <property name="geometry">
           <rect>
-           <x>60</x>
-           <y>560</y>
+           <x>305</x>
+           <y>552</y>
            <width>181</width>
            <height>31</height>
           </rect>
@@ -396,8 +342,8 @@
         <widget class="QSlider" name="ContrastSlider">
          <property name="geometry">
           <rect>
-           <x>59</x>
-           <y>630</y>
+           <x>304</x>
+           <y>622</y>
            <width>181</width>
            <height>31</height>
           </rect>
@@ -409,8 +355,8 @@
         <widget class="QSlider" name="SharpeningSlider">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>560</y>
+           <x>545</x>
+           <y>552</y>
            <width>181</width>
            <height>31</height>
           </rect>
@@ -422,8 +368,8 @@
         <widget class="QSlider" name="SaturationSlider">
          <property name="geometry">
           <rect>
-           <x>300</x>
-           <y>630</y>
+           <x>545</x>
+           <y>622</y>
            <width>181</width>
            <height>31</height>
           </rect>
@@ -435,9 +381,9 @@
         <widget class="QLabel" name="label_23">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>530</y>
-           <width>131</width>
+           <x>311</x>
+           <y>522</y>
+           <width>170</width>
            <height>31</height>
           </rect>
          </property>
@@ -456,9 +402,9 @@
         <widget class="QLabel" name="label_24">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>600</y>
-           <width>111</width>
+           <x>310</x>
+           <y>592</y>
+           <width>170</width>
            <height>31</height>
           </rect>
          </property>
@@ -477,9 +423,9 @@
         <widget class="QLabel" name="label_25">
          <property name="geometry">
           <rect>
-           <x>270</x>
-           <y>530</y>
-           <width>161</width>
+           <x>552</x>
+           <y>522</y>
+           <width>170</width>
            <height>31</height>
           </rect>
          </property>
@@ -498,9 +444,9 @@
         <widget class="QLabel" name="label_26">
          <property name="geometry">
           <rect>
-           <x>280</x>
-           <y>600</y>
-           <width>131</width>
+           <x>553</x>
+           <y>592</y>
+           <width>170</width>
            <height>31</height>
           </rect>
          </property>
@@ -519,8 +465,8 @@
         <widget class="QSlider" name="HueSlider">
          <property name="geometry">
           <rect>
-           <x>550</x>
-           <y>560</y>
+           <x>795</x>
+           <y>552</y>
            <width>181</width>
            <height>31</height>
           </rect>
@@ -532,8 +478,8 @@
         <widget class="QSlider" name="ValueSlider">
          <property name="geometry">
           <rect>
-           <x>550</x>
-           <y>630</y>
+           <x>795</x>
+           <y>622</y>
            <width>181</width>
            <height>31</height>
           </rect>
@@ -545,8 +491,8 @@
         <widget class="QLabel" name="label_27">
          <property name="geometry">
           <rect>
-           <x>516</x>
-           <y>538</y>
+           <x>835</x>
+           <y>530</y>
            <width>101</width>
            <height>21</height>
           </rect>
@@ -566,9 +512,9 @@
         <widget class="QLabel" name="label_28">
          <property name="geometry">
           <rect>
-           <x>517</x>
-           <y>608</y>
-           <width>111</width>
+           <x>800</x>
+           <y>600</y>
+           <width>170</width>
            <height>21</height>
           </rect>
          </property>
@@ -587,8 +533,8 @@
         <widget class="QPushButton" name="SaveButton">
          <property name="geometry">
           <rect>
-           <x>1100</x>
-           <y>600</y>
+           <x>1099</x>
+           <y>300</y>
            <width>111</width>
            <height>41</height>
           </rect>
@@ -609,14 +555,14 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>save.png</normaloff>save.png</iconset>
+           <normaloff>assets/save.png</normaloff>assets/save.png</iconset>
          </property>
         </widget>
         <widget class="QPushButton" name="ResetButton">
          <property name="geometry">
           <rect>
-           <x>1100</x>
-           <y>520</y>
+           <x>1099</x>
+           <y>230</y>
            <width>111</width>
            <height>41</height>
           </rect>
@@ -637,7 +583,273 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>reset.png</normaloff>reset.png</iconset>
+           <normaloff>assets/reset.png</normaloff>assets/reset.png</iconset>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="HistogramButton">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>240</y>
+           <width>101</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>Histogram</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="BinerButton">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>240</y>
+           <width>101</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>Biner</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="GaussianButton">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>170</y>
+           <width>101</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>Gaussian</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="EqualizationButton">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>170</y>
+           <width>101</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>Equalization</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="GrayscaleButton">
+         <property name="geometry">
+          <rect>
+           <x>84</x>
+           <y>310</y>
+           <width>101</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>Greyscale</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="EditedExcelButton">
+         <property name="geometry">
+          <rect>
+           <x>1099</x>
+           <y>400</y>
+           <width>51</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>.xlsx</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>550</x>
+           <y>0</y>
+           <width>201</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Output</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="EditedTextButton">
+         <property name="geometry">
+          <rect>
+           <x>1160</x>
+           <y>400</y>
+           <width>51</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>.txt</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>1089</x>
+           <y>360</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Simpan Piksel</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="RedoButton">
+         <property name="geometry">
+          <rect>
+           <x>1100</x>
+           <y>160</y>
+           <width>111</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>Redo</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>assets/redo.png</normaloff>assets/redo.png</iconset>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="UndoButton">
+         <property name="geometry">
+          <rect>
+           <x>1100</x>
+           <y>90</y>
+           <width>111</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(183, 177, 242);</string>
+         </property>
+         <property name="text">
+          <string>Undo</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>assets/undo.png</normaloff>assets/undo.png</iconset>
          </property>
         </widget>
        </widget>
@@ -666,7 +878,7 @@
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>455</x>
+       <x>460</x>
        <y>13</y>
        <width>401</width>
        <height>31</height>
@@ -681,7 +893,10 @@
       <string notr="true">background-color: rgb(167, 167, 167, 0);</string>
      </property>
      <property name="text">
-      <string>© 2025 nama kelompok | All rights reserved</string>
+      <string>© 2025 Tim LPDF | All rights reserved</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>

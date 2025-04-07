@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 import sys
+import pandas as pd
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -14,7 +15,9 @@ class ShowImage(QMainWindow):
         loadUi('tubes.ui', self)
         self.Image = None
         self.original_image = None
-        self.filtered_image = None  # Untuk menyimpan hasil setelah filter sebelum penyesuaian
+        self.filtered_image = None
+        self.history = []
+        self.redo_stack = []
 
         self.GaussianButton.clicked.connect(self.GaussianFilter)
         self.EqualizationButton.clicked.connect(self.HistogramEqualization)
@@ -25,6 +28,12 @@ class ShowImage(QMainWindow):
         self.ResetButton.clicked.connect(self.ResetImage)
         self.LoadButton.clicked.connect(self.LoadImage)
         self.SaveButton.clicked.connect(self.SaveImage)
+        self.RedoButton.clicked.connect(self.Redo)
+        self.UndoButton.clicked.connect(self.Undo)
+        self.OriginalExcelButton.clicked.connect(self.SaveOriginalPixeltoExcel)
+        self.OriginalTextButton.clicked.connect(self.SaveOriginalPixeltoText)
+        self.EditedExcelButton.clicked.connect(self.SaveEditedPixeltoExcel)
+        self.EditedTextButton.clicked.connect(self.SaveEditedPixeltoText)
 
         self.BrightnessSlider.valueChanged.connect(self.AdjustImage)
         self.ContrastSlider.valueChanged.connect(self.AdjustImage)
@@ -46,6 +55,74 @@ class ShowImage(QMainWindow):
         self.ValueSlider.setRange(0, 200)
         self.ValueSlider.setValue(100)
 
+    def SaveOriginalPixeltoExcel(self):
+        if self.original_image is not None:
+            file_path, _ = QFileDialog.getSaveFileName(self, "Save Original to Excel", "", "Excel files (*.xlsx)")
+            if file_path:
+                rgb_image = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2RGB)
+                df_r = pd.DataFrame(rgb_image[:,:,0])
+                df_g = pd.DataFrame(rgb_image[:,:,1])
+                df_b = pd.DataFrame(rgb_image[:,:,2])
+                
+                with pd.ExcelWriter(file_path) as writer:
+                    df_r.to_excel(writer, sheet_name='Red Channel')
+                    df_g.to_excel(writer, sheet_name='Green Channel')
+                    df_b.to_excel(writer, sheet_name='Blue Channel')
+
+    def SaveEditedPixeltoExcel(self):
+        if self.Image is not None:
+            file_path, _ = QFileDialog.getSaveFileName(self, "Save Edited to Excel", "", "Excel files (*.xlsx)")
+            if file_path:
+                rgb_image = cv2.cvtColor(self.Image, cv2.COLOR_BGR2RGB)
+                df_r = pd.DataFrame(rgb_image[:,:,0])
+                df_g = pd.DataFrame(rgb_image[:,:,1])
+                df_b = pd.DataFrame(rgb_image[:,:,2])
+                
+                with pd.ExcelWriter(file_path) as writer:
+                    df_r.to_excel(writer, sheet_name='Red Channel')
+                    df_g.to_excel(writer, sheet_name='Green Channel')
+                    df_b.to_excel(writer, sheet_name='Blue Channel')
+
+    def SaveOriginalPixeltoText(self):
+        if self.original_image is not None:
+            file_path, _ = QFileDialog.getSaveFileName(self, "Save Original to Text", "", "Text files (*.txt)")
+            if file_path:
+                with open(file_path, 'w') as f:
+                    rgb_image = cv2.cvtColor(self.original_image, cv2.COLOR_BGR2RGB)
+                    height, width = rgb_image.shape[:2]
+                    
+                    f.write("Original Image Pixel Values (RGB):\n")
+                    for i in range(height):
+                        for j in range(width):
+                            pixel = rgb_image[i,j]
+                            f.write(f"Pixel [{i},{j}]: R={pixel[0]}, G={pixel[1]}, B={pixel[2]}\n")
+
+    def SaveEditedPixeltoText(self):
+        if self.Image is not None:
+            file_path, _ = QFileDialog.getSaveFileName(self, "Save Edited to Text", "", "Text files (*.txt)")
+            if file_path:
+                with open(file_path, 'w') as f:
+                    rgb_image = cv2.cvtColor(self.Image, cv2.COLOR_BGR2RGB)
+                    height, width = rgb_image.shape[:2]
+                    
+                    f.write("Edited Image Pixel Values (RGB):\n")
+                    for i in range(height):
+                        for j in range(width):
+                            pixel = rgb_image[i,j]
+                            f.write(f"Pixel [{i},{j}]: R={pixel[0]}, G={pixel[1]}, B={pixel[2]}\n")
+
+    def Undo(self):
+        if len(self.history) > 1:
+            self.redo_stack.append(self.history.pop())
+            self.filtered_image = self.history[-1].copy()
+            self.AdjustImage()
+
+    def Redo(self):
+        if self.redo_stack:
+            self.history.append(self.redo_stack.pop())
+            self.filtered_image = self.history[-1].copy()
+            self.AdjustImage()
+
     def LoadImage(self):
         options = QFileDialog.Options()
         file_path, _ = QFileDialog.getOpenFileName(self, "Pilih Gambar", "", "Images (*.png *.xpm *.jpg *.jpeg *.bmp);;All Files (*)", options=options)
@@ -59,6 +136,8 @@ class ShowImage(QMainWindow):
                 self.original_image = cv2.resize(self.original_image, new_size, interpolation=cv2.INTER_AREA)
             self.filtered_image = self.original_image.copy()
             self.Image = self.original_image.copy()
+            self.history = [self.original_image.copy()]
+            self.redo_stack = []
             self.displayImage(1)
             self.AdjustImage()
 
@@ -71,6 +150,8 @@ class ShowImage(QMainWindow):
     def ResetImage(self):
         if self.original_image is not None:
             self.filtered_image = self.original_image.copy()
+            self.history = [self.original_image.copy()]
+            self.redo_stack = []
             self.AdjustImage()
             self.BrightnessSlider.setValue(0)
             self.ContrastSlider.setValue(100)
@@ -95,12 +176,16 @@ class ShowImage(QMainWindow):
     def Grayscale(self):
         gray = cv2.cvtColor(self.filtered_image, cv2.COLOR_BGR2GRAY)
         self.filtered_image = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
+        self.history.append(self.filtered_image.copy())
+        self.redo_stack = []
         self.AdjustImage()
 
     def Biner(self):
         gray = cv2.cvtColor(self.filtered_image, cv2.COLOR_BGR2GRAY)
         _, binary = cv2.threshold(gray, 180, 255, cv2.THRESH_BINARY)
         self.filtered_image = cv2.cvtColor(binary, cv2.COLOR_GRAY2BGR)
+        self.history.append(self.filtered_image.copy())
+        self.redo_stack = []
         self.AdjustImage()
 
     def Convolve(self, kernel):
@@ -114,6 +199,8 @@ class ShowImage(QMainWindow):
         kernel = (1/(2*np.pi*sigma**2)) * np.exp(-0.5 * (np.square(xx) + np.square(yy)) / np.square(sigma))
         kernel = kernel / np.sum(kernel)
         self.filtered_image = self.Convolve(kernel)
+        self.history.append(self.filtered_image.copy())
+        self.redo_stack = []
         self.AdjustImage()
 
     def HistogramEqualization(self):
@@ -124,6 +211,8 @@ class ShowImage(QMainWindow):
         cdf_m = (cdf_m - cdf_m.min()) * 255 / (cdf_m.max() - cdf_m.min()) 
         cdf = np.ma.filled(cdf_m, 0).astype('uint8') 
         self.filtered_image = cdf[self.filtered_image] 
+        self.history.append(self.filtered_image.copy())
+        self.redo_stack = []
         plt.plot(cdf_normalized, color='b')
         plt.hist(self.filtered_image.flatten(), 256, [0, 256], color='r')
         plt.xlim([0, 256])
